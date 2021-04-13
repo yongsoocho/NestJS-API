@@ -1,0 +1,19 @@
+{
+  "name": "nestjs-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/yongsoocho/NestJS-API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yongsoocho/NestJS-API/issues"
+  },
+  "homepage": "https://github.com/yongsoocho/NestJS-API#readme"
+}
