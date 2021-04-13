@@ -1,6 +1,7 @@
 import { Controller, Param, Query, Body, Get, Post, Delete, Patch } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { Movie } from './entities/movie.entity';
+import { CreateMovieDto } from '../dto/create-movie.dto';
 
 @Controller('movies')	// Router
 export class MoviesController {
@@ -13,7 +14,7 @@ export class MoviesController {
 	}
 
 	@Post()
-	create(@Body() movieData: { title: string; year: number; genres: string[] }) {
+	create(@Body() movieData: CreateMovieDto) {
 		return this.moviesService.create(movieData);
 	}
 
