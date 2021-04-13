@@ -2,6 +2,7 @@ import { Controller, Param, Query, Body, Get, Post, Delete, Patch } from '@nestj
 import { MoviesService } from './movies.service';
 import { Movie } from './entities/movie.entity';
 import { CreateMovieDto } from '../dto/create-movie.dto';
+import { UpdateMovieDto } from '../dto/update-movie.dto';
 
 @Controller('movies')	// Router
 export class MoviesController {
@@ -19,13 +20,13 @@ export class MoviesController {
 	}
 
 	@Delete("/:id")
-	delete(@Param('id') movieId: string): boolean {
+	delete(@Param('id') movieId: number): boolean {
 		return this.moviesService.deleteOne(movieId);
 	}
 
 	@Patch("/:id")	// Put: entire update, Patch: update partion
-	patch(@Param('id') movieId: string,
-		  @Body() updateData: { title: string; }) {
+	patch(@Param('id') movieId: number,
+		  @Body() updateData: UpdateMovieDto) {
 		return  { movieId, updateData }
 	}
 
@@ -35,7 +36,7 @@ export class MoviesController {
 	}
 
 	@Get("/:id")
-	getOne(@Param('id') movieId: string): Movie {	// if @Param(), movieId would be params Object
+	getOne(@Param('id') movieId: number): Movie {	// if @Param(), movieId would be params Object
 		return this.moviesService.getOne(movieId);
 	}
 }
